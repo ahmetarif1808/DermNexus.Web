@@ -45,6 +45,9 @@ body {
 }
 .nav-link:hover { color: #0891b2; }
 
+.footer-mail { transition: color 0.18s; }
+.footer-mail:hover { color: #0891b2; }
+
 /* ── Cards ── */
 .team-card {
   background: #ffffff;

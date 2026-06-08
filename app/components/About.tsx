@@ -72,8 +72,11 @@ export default function About() {
             <motion.div
               key={p.title}
               variants={cardVariants}
-              className="about-card flex flex-col pt-10 pb-6 pr-10"
-              style={i > 0 ? { borderLeft: "1px solid #e8e2d9", paddingLeft: "2.5rem" } : {}}
+              className={`about-card flex flex-col pt-10 pb-6 md:pr-10${
+                i > 0
+                  ? " border-t border-[#e8e2d9] md:border-t-0 md:border-l md:pl-10"
+                  : ""
+              }`}
             >
               <motion.div
                 className="mb-8"

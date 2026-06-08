@@ -18,7 +18,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "DermNexus — Kozmetik Kimyasında Yapay Zekâ",
+  title: "DermNexus — Kozmetik Kimyasında Yapay Zeka",
   description:
     "Farklı markaların kozmetik ürünleri arasındaki kimyasal çakışmaları ve cilt uyumunu RAG mimarisiyle denetleyen, çift taraflı bir derin teknoloji ekosistemi.",
 };

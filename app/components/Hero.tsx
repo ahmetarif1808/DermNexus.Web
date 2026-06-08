@@ -81,7 +81,7 @@ export default function Hero() {
               className="font-heading"
               style={{ color: "#0891b2", fontStyle: "italic", fontWeight: 300 }}
             >
-              Yapay Zekâ
+              Yapay Zeka
             </em>{" "}
             Dönemi
           </motion.h1>
