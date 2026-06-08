@@ -48,9 +48,29 @@ export default function Navbar() {
         </a>
 
         {/* Nav */}
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center gap-4 md:gap-8">
           <a href="#about" className="nav-link hidden md:block">Teknoloji</a>
           <a href="#team" className="nav-link hidden md:block">Ekip</a>
+          <a
+            href="mailto:info@dermnexus.com.tr"
+            className="btn-contact flex items-center gap-2 px-3.5 py-2 rounded-md whitespace-nowrap text-xs font-semibold"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="shrink-0"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m2 7 10 6 10-6" />
+            </svg>
+            info@dermnexus.com.tr
+          </a>
           <a
             href="#waitlist"
             className="btn-teal px-5 py-2.5 text-xs font-semibold rounded-md"

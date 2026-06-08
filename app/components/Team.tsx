@@ -33,7 +33,7 @@ const founders: Member[] = [
     initial: "A",
     name: "Ahmet Arif İsen",
     role: "Kurucu Ortak",
-    tags: ["Yazılım Mühendisliği", "AI / ML", "Sistem Mimarisi"],
+    tags: ["Yönetim", "İş Geliştirme", "Sistem Mimarisi"],
     isFounder: true,
     email: "ahmet@dermnexus.com.tr",
   },
@@ -41,7 +41,7 @@ const founders: Member[] = [
     initial: "D",
     name: "Defne Küpeli",
     role: "Kurucu Ortak",
-    tags: ["Yönetim", "İş Geliştirme", "Kozmetik Sektörü"],
+    tags: ["Yazılım Mühendisliği", "AI / ML", "Kozmetik Sektörü"],
     isFounder: true,
     email: "defne@dermnexus.com.tr",
   },
@@ -105,7 +105,7 @@ export default function Team() {
             viewport={{ once: true, amount: 0.15 }}
           >
             {founders.map((m) => (
-              <motion.div key={m.name} variants={cardVariants}>
+              <motion.div key={m.name} variants={cardVariants} className="h-full">
                 <MemberCard member={m} />
               </motion.div>
             ))}
@@ -127,7 +127,7 @@ export default function Team() {
             viewport={{ once: true, amount: 0.15 }}
           >
             {advisors.map((m) => (
-              <motion.div key={m.name} variants={cardVariants}>
+              <motion.div key={m.name} variants={cardVariants} className="h-full">
                 <MemberCard member={m} />
               </motion.div>
             ))}
@@ -141,48 +141,56 @@ export default function Team() {
 function MemberCard({ member }: { member: Member }) {
   return (
     <div
-      className="team-card flex items-start gap-5 p-6 rounded-xl"
-      style={member.isFounder ? { borderLeft: "2px solid #0891b2" } : {}}
+      className={`team-card flex items-start gap-5 p-6 sm:p-7 rounded-2xl h-full${
+        member.isFounder ? " is-founder" : ""
+      }`}
     >
-      <div
-        className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-heading text-lg font-semibold"
-        style={{ background: "#0f2744", color: "#ffffff" }}
-      >
+      <div className="team-avatar shrink-0 w-14 h-14 rounded-full flex items-center justify-center font-heading text-xl font-semibold">
         {member.initial}
       </div>
       <div className="min-w-0 flex-1">
-        <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+        <div className="flex items-center gap-2 mb-1 flex-wrap">
           <p className="font-heading text-lg font-semibold" style={{ color: "#0f2744", letterSpacing: "-0.01em" }}>
             {member.name}
           </p>
           {member.isFounder && (
             <span
-              className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm"
-              style={{ background: "rgba(8,145,178,0.08)", color: "#0891b2" }}
+              className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+              style={{ background: "rgba(8,145,178,0.1)", color: "#0891b2" }}
             >
               Co-Founder
             </span>
           )}
         </div>
-        <p className="text-xs font-medium mb-4" style={{ color: "#0891b2", letterSpacing: "0.02em" }}>
+        <p className="text-xs font-semibold uppercase tracking-[0.08em] mb-4" style={{ color: "#0891b2" }}>
           {member.role}
         </p>
         {member.email && (
           <a
             href={`mailto:${member.email}`}
-            className="footer-mail inline-block text-xs font-medium mb-4 break-all"
+            className="footer-mail inline-flex items-center gap-1.5 text-xs font-medium mb-4 break-all"
             style={{ color: "#64748b" }}
           >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="shrink-0"
+            >
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="m2 7 10 6 10-6" />
+            </svg>
             {member.email}
           </a>
         )}
         <div className="flex flex-wrap gap-1.5">
           {member.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs px-2.5 py-1 rounded-md"
-              style={{ background: "#f5f3ee", color: "#64748b", border: "1px solid #e8e2d9" }}
-            >
+            <span key={tag} className="team-tag text-xs px-2.5 py-1 rounded-md">
               {tag}
             </span>
           ))}

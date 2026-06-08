@@ -35,10 +35,10 @@ const stats = [
 export default function Hero() {
   return (
     <section
-      className="flex flex-col justify-center min-h-[calc(100vh-64px)] px-6 md:px-16 lg:px-24 py-24"
+      className="flex flex-col justify-center min-h-[calc(100vh-64px)] px-6 md:px-16 lg:px-24 pt-10 pb-24 md:pt-12"
       style={{ background: "#ffffff" }}
     >
-      <div className="max-w-5xl w-full">
+      <div className="max-w-5xl w-full mx-auto">
         <motion.div
           variants={container}
           initial="hidden"
@@ -90,7 +90,7 @@ export default function Hero() {
           <motion.p
             variants={item}
             className="text-lg md:text-xl leading-relaxed mb-12"
-            style={{ color: "#64748b", maxWidth: "560px", fontWeight: 300 }}
+            style={{ color: "#64748b", maxWidth: "640px", fontWeight: 300 }}
           >
             Farklı markaların kozmetik ürünleri arasındaki kimyasal çakışmaları
             ve cilt uyumunu RAG mimarisiyle denetleyen, çift taraflı bir derin
