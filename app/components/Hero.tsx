@@ -129,8 +129,11 @@ export default function Hero() {
             {stats.map((s, i) => (
               <div
                 key={s.label}
-                className="pt-8 pb-4 pr-8"
-                style={i > 0 ? { borderLeft: "1px solid #e8e2d9", paddingLeft: "2rem" } : {}}
+                className={`pt-8 pb-4 sm:pr-8${
+                  i > 0
+                    ? " border-t border-[#e8e2d9] sm:border-t-0 sm:border-l sm:pl-8"
+                    : ""
+                }`}
               >
                 <div
                   className="font-heading font-light leading-none mb-3"
