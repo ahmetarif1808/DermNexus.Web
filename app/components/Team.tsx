@@ -25,6 +25,7 @@ type Member = {
   role: string;
   tags: string[];
   isFounder?: boolean;
+  email?: string;
 };
 
 const founders: Member[] = [
@@ -34,6 +35,7 @@ const founders: Member[] = [
     role: "Kurucu Ortak",
     tags: ["Yazılım Mühendisliği", "AI / ML", "Sistem Mimarisi"],
     isFounder: true,
+    email: "ahmet@dermnexus.com.tr",
   },
   {
     initial: "D",
@@ -41,6 +43,7 @@ const founders: Member[] = [
     role: "Kurucu Ortak",
     tags: ["Yönetim", "İş Geliştirme", "Kozmetik Sektörü"],
     isFounder: true,
+    email: "defne@dermnexus.com.tr",
   },
 ];
 
@@ -164,6 +167,15 @@ function MemberCard({ member }: { member: Member }) {
         <p className="text-xs font-medium mb-4" style={{ color: "#0891b2", letterSpacing: "0.02em" }}>
           {member.role}
         </p>
+        {member.email && (
+          <a
+            href={`mailto:${member.email}`}
+            className="footer-mail inline-block text-xs font-medium mb-4 break-all"
+            style={{ color: "#64748b" }}
+          >
+            {member.email}
+          </a>
+        )}
         <div className="flex flex-wrap gap-1.5">
           {member.tags.map((tag) => (
             <span
